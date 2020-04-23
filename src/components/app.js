@@ -1,41 +1,69 @@
 import React, { Component } from "react";
+import { Field, reduxForm } from "redux-form";
 import "stylecraft/dist/stylecraft.css";
 
 import "./app.css";
 
 class App extends Component {
+  renderError = ({ error, touched }) => {
+    if (error && touched) {
+      return error;
+    }
+  };
+
+  renderTitle = ({ input, label, meta }) => {
+    return (
+      <div className="sc-form-text sc-has-label">
+        <input {...input} id="title" />
+
+        <label htmlFor="title">{label}</label>
+
+        <div>{this.renderError(meta)}</div>
+      </div>
+    );
+  };
+
+  renderDescription = ({ input, label, meta }) => {
+    return (
+      <div className="sc-form-text sc-has-label">
+        <textarea {...input} id="description"></textarea>
+
+        <label htmlFor="description">{label}</label>
+
+        <div>{this.renderError(meta)}</div>
+      </div>
+    );
+  };
+
+  onSubmit(formValues) {
+    console.log(formValues);
+  }
+
   render() {
     return (
       <div className="container">
-        <form className="sc-form">
+        <form
+          className="sc-form"
+          onSubmit={this.props.handleSubmit(this.onSubmit)}
+        >
           <div className="sc-form-group sc-grid-1">
-            <div className="sc-form-text sc-has-label">
-              <input type="text" name="title" id="title" />
+            <Field
+              name="title"
+              label="Enter Title"
+              component={this.renderTitle}
+            />
 
-              <label for="title">Title</label>
-            </div>
+            <Field
+              name="description"
+              label="Enter Description"
+              component={this.renderDescription}
+            />
 
-            <div className="sc-form-textarea sc-has-label">
-              <textarea name="description" id="description"></textarea>
-
-              <label for="description">Description</label>
-            </div>
-          </div>
-
-          <div className="sc-form-group sc-grid-2">
-            <div class="sc-form-button sc-md">
+            <div className="sc-form-button sc-md">
               <button type="submit">
-                <i class="sc-icon-true"></i>
+                <i className="sc-icon-true"></i>
 
                 <span>Submit</span>
-              </button>
-            </div>
-
-            <div class="sc-form-button sc-md sc-flex-rr">
-              <button type="reset">
-                <i class="sc-icon-false"></i>
-
-                <span>Reset</span>
               </button>
             </div>
           </div>
@@ -45,4 +73,21 @@ class App extends Component {
   }
 }
 
-export default App;
+const validate = (formValues) => {
+  const errors = {};
+
+  if (!formValues.title) {
+    errors.title = "Title cannot be empty.";
+  }
+
+  if (!formValues.description) {
+    errors.description = "Description cannot be empty.";
+  }
+
+  return errors;
+};
+
+export default reduxForm({
+  form: "Stylecraft",
+  validate,
+})(App);
