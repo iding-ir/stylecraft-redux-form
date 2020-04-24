@@ -5,8 +5,6 @@ import "stylecraft/dist/stylecraft.css";
 import "./app.css";
 
 class App extends Component {
-  formValues = {};
-
   renderError = (meta) => {
     const { error, touched } = meta;
 
@@ -95,8 +93,6 @@ class App extends Component {
 
   onSubmit = (formValues) => {
     console.log(formValues);
-
-    this.formValues = formValues;
   };
 
   render() {
@@ -106,10 +102,18 @@ class App extends Component {
           className="sc-form"
           onSubmit={this.props.handleSubmit(this.onSubmit)}
         >
+          <h4>Personal info:</h4>
+
           <div className="sc-form-group sc-grid-1">
             <Field
               name="name"
-              label="Enter Name"
+              label="Enter name"
+              component={this.renderTextfield}
+            />
+
+            <Field
+              name="email"
+              label="Enter email"
               component={this.renderTextfield}
             />
           </div>
@@ -125,13 +129,17 @@ class App extends Component {
             />
           </div>
 
+          <h4>Motivation letter:</h4>
+
           <div className="sc-form-group sc-grid-1">
             <Field
               name="letter"
-              label="Enter Letter"
+              label="Enter letter"
               component={this.renderTextarea}
             />
           </div>
+
+          <h4>Agreements:</h4>
 
           <div className="sc-form-group sc-grid-1">
             <Field
@@ -179,6 +187,12 @@ const validate = (formValues) => {
 
   if (!formValues.name) {
     errors.name = "Name cannot be empty";
+  }
+
+  if (!formValues.email) {
+    errors.email = "Email cannot be empty";
+  } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
+    errors.email = "Invalid email format";
   }
 
   if (!formValues.letter) {
