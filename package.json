@@ -1,6 +1,6 @@
 {
   "name": "stylecraft-redux-form",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Redux-form done with Stylecraft.",
   "repository": {
     "type": "git",
