@@ -7,13 +7,17 @@ import "./app.css";
 class App extends Component {
   formValues = {};
 
-  renderError = ({ error, touched }) => {
+  renderError = (meta) => {
+    const { error, touched } = meta;
+
     if (error && touched) {
       return error;
     }
   };
 
-  renderTitle = ({ input, label, meta }) => {
+  renderTextfield = (formProps) => {
+    const { input, label, meta } = formProps;
+
     return (
       <div className="sc-form-text sc-has-label">
         <input {...input} autoComplete="off" id={input.name} />
@@ -26,7 +30,31 @@ class App extends Component {
     );
   };
 
-  renderDescription = ({ input, label, meta }) => {
+  renderRadio = (formProps) => {
+    const { input, items, meta } = formProps;
+
+    return items.map((item) => {
+      const { id, value, label } = item;
+
+      return (
+        <div className="sc-form-radio" key={id}>
+          <input type="radio" {...input} value={value} id={id} />
+
+          <label htmlFor={id}>
+            <i className="sc-icon-radio"></i>
+
+            <span>{label}</span>
+          </label>
+
+          <div className="error">{this.renderError(meta)}</div>
+        </div>
+      );
+    });
+  };
+
+  renderTextarea = (formProps) => {
+    const { input, label, meta } = formProps;
+
     return (
       <div className="sc-form-text sc-has-label">
         <textarea {...input} id={input.name}></textarea>
@@ -45,7 +73,7 @@ class App extends Component {
 
   renderResult = () => {
     return Object.keys(this.formValues).map((key) => (
-      <p>
+      <p key={key}>
         {key}: {this.formValues[key]}
       </p>
     ));
@@ -60,17 +88,32 @@ class App extends Component {
         >
           <div className="sc-form-group sc-grid-1">
             <Field
-              name="title"
-              label="Enter Title"
-              component={this.renderTitle}
+              name="name"
+              label="Enter Name"
+              component={this.renderTextfield}
             />
+          </div>
 
+          <div className="sc-form-group sc-grid-2">
             <Field
-              name="description"
-              label="Enter Description"
-              component={this.renderDescription}
+              name="gender"
+              items={[
+                { id: "male", label: "Male", value: "male" },
+                { id: "female", label: "Female", value: "female" },
+              ]}
+              component={this.renderRadio}
             />
+          </div>
 
+          <div className="sc-form-group sc-grid-1">
+            <Field
+              name="letter"
+              label="Enter Letter"
+              component={this.renderTextarea}
+            />
+          </div>
+
+          <div className="sc-form-group sc-grid-1">
             <div className="sc-form-button sc-md">
               <button type="submit" disabled={!this.props.valid}>
                 <i className="sc-icon-true"></i>
@@ -90,12 +133,16 @@ class App extends Component {
 const validate = (formValues) => {
   const errors = {};
 
-  if (!formValues.title) {
-    errors.title = "Title cannot be empty";
+  if (!formValues.name) {
+    errors.name = "Name cannot be empty";
   }
 
-  if (!formValues.description) {
-    errors.description = "Description cannot be empty";
+  if (!formValues.letter) {
+    errors.letter = "Letter cannot be empty";
+  }
+
+  if (!formValues.gender) {
+    errors.gender = "Gender cannot be empty";
   }
 
   return errors;
