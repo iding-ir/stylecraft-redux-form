@@ -102,6 +102,8 @@ class App extends Component {
           className="sc-form"
           onSubmit={this.props.handleSubmit(this.onSubmit)}
         >
+          <h2>Application form</h2>
+
           <h4>Personal info:</h4>
 
           <div className="sc-form-group sc-grid-1">
@@ -186,25 +188,29 @@ const validate = (formValues) => {
   const errors = {};
 
   if (!formValues.name) {
-    errors.name = "Name cannot be empty";
+    errors.name = "Name cannot be empty.";
+  } else if (formValues.name.length < 3) {
+    errors.name = "Enter a longer name.";
   }
 
   if (!formValues.email) {
-    errors.email = "Email cannot be empty";
+    errors.email = "Email cannot be empty.";
   } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
-    errors.email = "Invalid email format";
+    errors.email = "Invalid email format.";
   }
 
   if (!formValues.letter) {
-    errors.letter = "Letter cannot be empty";
+    errors.letter = "Letter cannot be empty.";
+  } else if (formValues.letter.length < 10) {
+    errors.letter = "Enter a longer letter.";
   }
 
   if (!formValues.gender) {
-    errors.gender = "Gender cannot be empty";
+    errors.gender = "Gender cannot be empty.";
   }
 
   if (!formValues.tos) {
-    errors.tos = "You must agree with terms of service";
+    errors.tos = "You must agree with terms of service.";
   }
 
   return errors;
