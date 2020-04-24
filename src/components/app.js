@@ -3,88 +3,14 @@ import { Field, reduxForm } from "redux-form";
 import "stylecraft/dist/stylecraft.css";
 
 import "./app.css";
+import {
+  renderTextfield,
+  renderRadio,
+  renderCheckbox,
+  renderTextarea,
+} from "./stylecraftReduxForm";
 
 class App extends Component {
-  renderError = (meta) => {
-    const { error, touched } = meta;
-
-    if (error && touched) {
-      return error;
-    }
-  };
-
-  renderTextfield = (formProps) => {
-    const { input, label, meta } = formProps;
-
-    return (
-      <div className="sc-form-text sc-has-label">
-        <input {...input} autoComplete="off" id={input.name} />
-
-        <label htmlFor={input.name}>{label}</label>
-
-        <span className="error">{this.renderError(meta)}</span>
-      </div>
-    );
-  };
-
-  renderRadio = (formProps) => {
-    const { input, items, meta } = formProps;
-
-    return items.map((item) => {
-      const { id, value, label } = item;
-
-      return (
-        <div className="sc-form-radio" key={id}>
-          <input type="radio" {...input} value={value} id={id} />
-
-          <label htmlFor={id}>
-            <i className="sc-icon-radio"></i>
-
-            <span>{label}</span>
-          </label>
-
-          <div className="error">{this.renderError(meta)}</div>
-        </div>
-      );
-    });
-  };
-
-  renderCheckbox = (formProps) => {
-    const { input, items, meta } = formProps;
-
-    return items.map((item) => {
-      const { id, value, label } = item;
-
-      return (
-        <div className="sc-form-checkbox" key={id}>
-          <input type="checkbox" {...input} value={value} id={id} />
-
-          <label htmlFor={id}>
-            <i className="sc-icon-checkbox"></i>
-
-            <span>{label}</span>
-          </label>
-
-          <div className="error">{this.renderError(meta)}</div>
-        </div>
-      );
-    });
-  };
-
-  renderTextarea = (formProps) => {
-    const { input, label, meta } = formProps;
-
-    return (
-      <div className="sc-form-text sc-has-label">
-        <textarea {...input} id={input.name}></textarea>
-
-        <label htmlFor={input.name}>{label}</label>
-
-        <span className="error">{this.renderError(meta)}</span>
-      </div>
-    );
-  };
-
   onSubmit = (formValues) => {
     console.log(formValues);
   };
@@ -101,16 +27,12 @@ class App extends Component {
           <h4>Personal info:</h4>
 
           <div className="sc-form-group sc-grid-1">
-            <Field
-              name="name"
-              label="Enter name"
-              component={this.renderTextfield}
-            />
+            <Field name="name" label="Enter name" component={renderTextfield} />
 
             <Field
               name="email"
               label="Enter email"
-              component={this.renderTextfield}
+              component={renderTextfield}
             />
           </div>
 
@@ -121,7 +43,7 @@ class App extends Component {
                 { id: "male", label: "Male", value: "male" },
                 { id: "female", label: "Female", value: "female" },
               ]}
-              component={this.renderRadio}
+              component={renderRadio}
             />
           </div>
 
@@ -131,7 +53,7 @@ class App extends Component {
             <Field
               name="letter"
               label="Enter letter"
-              component={this.renderTextarea}
+              component={renderTextarea}
             />
           </div>
 
@@ -147,7 +69,7 @@ class App extends Component {
                   value: "tos",
                 },
               ]}
-              component={this.renderCheckbox}
+              component={renderCheckbox}
             />
 
             <Field
@@ -159,7 +81,7 @@ class App extends Component {
                   value: "newsletter",
                 },
               ]}
-              component={this.renderCheckbox}
+              component={renderCheckbox}
             />
           </div>
 
