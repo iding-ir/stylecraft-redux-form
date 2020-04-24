@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding: 1rem;
 }
+
+.error {
+  float: right;
+  line-height: var(--icon-md);
+  color: var(--color-secondary-dark);
+}

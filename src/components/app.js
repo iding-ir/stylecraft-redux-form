@@ -18,9 +18,10 @@ class App extends Component {
       <div className="sc-form-text sc-has-label">
         <input {...input} autoComplete="off" id={input.name} />
 
-        <label htmlFor={input.name}>{label}</label>
-
-        <div>{this.renderError(meta)}</div>
+        <label htmlFor={input.name}>
+          {label}
+          <span className="error">{this.renderError(meta)}</span>
+        </label>
       </div>
     );
   };
@@ -30,9 +31,10 @@ class App extends Component {
       <div className="sc-form-text sc-has-label">
         <textarea {...input} id={input.name}></textarea>
 
-        <label htmlFor={input.name}>{label}</label>
-
-        <div>{this.renderError(meta)}</div>
+        <label htmlFor={input.name}>
+          {label}
+          <span className="error">{this.renderError(meta)}</span>
+        </label>
       </div>
     );
   };
@@ -89,11 +91,11 @@ const validate = (formValues) => {
   const errors = {};
 
   if (!formValues.title) {
-    errors.title = "Title cannot be empty.";
+    errors.title = "Title cannot be empty";
   }
 
   if (!formValues.description) {
-    errors.description = "Description cannot be empty.";
+    errors.description = "Description cannot be empty";
   }
 
   return errors;
