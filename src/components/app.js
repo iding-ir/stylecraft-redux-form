@@ -50,20 +50,14 @@ class App extends Component {
   };
 
   renderCheckbox = (formProps) => {
-    const { input, items, meta, checked } = formProps;
+    const { input, items, meta } = formProps;
 
     return items.map((item) => {
       const { id, value, label } = item;
 
       return (
         <div className="sc-form-checkbox" key={id}>
-          <input
-            type="checkbox"
-            {...input}
-            value={value}
-            id={id}
-            checked={checked}
-          />
+          <input type="checkbox" {...input} value={value} id={id} />
 
           <label htmlFor={id}>
             <i className="sc-icon-checkbox"></i>
