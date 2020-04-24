@@ -8,7 +8,7 @@ import {
   renderRadio,
   renderCheckbox,
   renderTextarea,
-} from "./stylecraftReduxForm";
+} from "../../src";
 
 class App extends Component {
   onSubmit = (formValues) => {
