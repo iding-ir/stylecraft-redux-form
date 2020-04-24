@@ -70,7 +70,7 @@ class App extends Component {
             />
 
             <div className="sc-form-button sc-md">
-              <button type="submit">
+              <button type="submit" disabled={!this.props.valid}>
                 <i className="sc-icon-true"></i>
 
                 <span>Submit</span>
