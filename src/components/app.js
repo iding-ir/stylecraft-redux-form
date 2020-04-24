@@ -5,6 +5,8 @@ import "stylecraft/dist/stylecraft.css";
 import "./app.css";
 
 class App extends Component {
+  formValues = {};
+
   renderError = ({ error, touched }) => {
     if (error && touched) {
       return error;
@@ -14,9 +16,9 @@ class App extends Component {
   renderTitle = ({ input, label, meta }) => {
     return (
       <div className="sc-form-text sc-has-label">
-        <input {...input} id="title" />
+        <input {...input} autoComplete="off" id={input.name} />
 
-        <label htmlFor="title">{label}</label>
+        <label htmlFor={input.name}>{label}</label>
 
         <div>{this.renderError(meta)}</div>
       </div>
@@ -26,18 +28,26 @@ class App extends Component {
   renderDescription = ({ input, label, meta }) => {
     return (
       <div className="sc-form-text sc-has-label">
-        <textarea {...input} id="description"></textarea>
+        <textarea {...input} id={input.name}></textarea>
 
-        <label htmlFor="description">{label}</label>
+        <label htmlFor={input.name}>{label}</label>
 
         <div>{this.renderError(meta)}</div>
       </div>
     );
   };
 
-  onSubmit(formValues) {
-    console.log(formValues);
-  }
+  onSubmit = (formValues) => {
+    this.formValues = formValues;
+  };
+
+  renderResult = () => {
+    return Object.keys(this.formValues).map((key) => (
+      <p>
+        {key}: {this.formValues[key]}
+      </p>
+    ));
+  };
 
   render() {
     return (
@@ -68,6 +78,8 @@ class App extends Component {
             </div>
           </div>
         </form>
+
+        <div>{this.renderResult()}</div>
       </div>
     );
   }
