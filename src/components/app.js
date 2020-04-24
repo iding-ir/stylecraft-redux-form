@@ -22,10 +22,9 @@ class App extends Component {
       <div className="sc-form-text sc-has-label">
         <input {...input} autoComplete="off" id={input.name} />
 
-        <label htmlFor={input.name}>
-          {label}
-          <span className="error">{this.renderError(meta)}</span>
-        </label>
+        <label htmlFor={input.name}>{label}</label>
+
+        <span className="error">{this.renderError(meta)}</span>
       </div>
     );
   };
@@ -52,6 +51,34 @@ class App extends Component {
     });
   };
 
+  renderCheckbox = (formProps) => {
+    const { input, items, meta, checked } = formProps;
+
+    return items.map((item) => {
+      const { id, value, label } = item;
+
+      return (
+        <div className="sc-form-checkbox" key={id}>
+          <input
+            type="checkbox"
+            {...input}
+            value={value}
+            id={id}
+            checked={checked}
+          />
+
+          <label htmlFor={id}>
+            <i className="sc-icon-checkbox"></i>
+
+            <span>{label}</span>
+          </label>
+
+          <div className="error">{this.renderError(meta)}</div>
+        </div>
+      );
+    });
+  };
+
   renderTextarea = (formProps) => {
     const { input, label, meta } = formProps;
 
@@ -59,24 +86,17 @@ class App extends Component {
       <div className="sc-form-text sc-has-label">
         <textarea {...input} id={input.name}></textarea>
 
-        <label htmlFor={input.name}>
-          {label}
-          <span className="error">{this.renderError(meta)}</span>
-        </label>
+        <label htmlFor={input.name}>{label}</label>
+
+        <span className="error">{this.renderError(meta)}</span>
       </div>
     );
   };
 
   onSubmit = (formValues) => {
-    this.formValues = formValues;
-  };
+    console.log(formValues);
 
-  renderResult = () => {
-    return Object.keys(this.formValues).map((key) => (
-      <p key={key}>
-        {key}: {this.formValues[key]}
-      </p>
-    ));
+    this.formValues = formValues;
   };
 
   render() {
@@ -114,6 +134,32 @@ class App extends Component {
           </div>
 
           <div className="sc-form-group sc-grid-1">
+            <Field
+              name="tos"
+              items={[
+                {
+                  id: "tos",
+                  label: "I agree to terms of service",
+                  value: "tos",
+                },
+              ]}
+              component={this.renderCheckbox}
+            />
+
+            <Field
+              name="newsletter"
+              items={[
+                {
+                  id: "newsletter",
+                  label: "Subscribe to newsletter with email",
+                  value: "newsletter",
+                },
+              ]}
+              component={this.renderCheckbox}
+            />
+          </div>
+
+          <div className="sc-form-group sc-grid-1">
             <div className="sc-form-button sc-md">
               <button type="submit" disabled={!this.props.valid}>
                 <i className="sc-icon-true"></i>
@@ -123,8 +169,6 @@ class App extends Component {
             </div>
           </div>
         </form>
-
-        <div>{this.renderResult()}</div>
       </div>
     );
   }
@@ -143,6 +187,10 @@ const validate = (formValues) => {
 
   if (!formValues.gender) {
     errors.gender = "Gender cannot be empty";
+  }
+
+  if (!formValues.tos) {
+    errors.tos = "You must agree with terms of service";
   }
 
   return errors;
