@@ -10,7 +10,7 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
-    contentBase: path.join(__dirname, "src"),
+    contentBase: path.join(__dirname, "example"),
     // publicPath: '/dist/',
     // compress: true,
     port: 9000,

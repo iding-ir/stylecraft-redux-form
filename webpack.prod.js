@@ -32,8 +32,8 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({ filename: "[name].css" }),
     new CopyPlugin([
       {
-        from: path.resolve(__dirname, "example/assets/favicons"),
-        to: path.resolve(__dirname, "dist/assets/favicons"),
+        from: path.resolve(__dirname, "example/assets/favicon"),
+        to: path.resolve(__dirname, "dist/assets/favicon"),
       },
     ]),
     new CleanWebpackPlugin(),
