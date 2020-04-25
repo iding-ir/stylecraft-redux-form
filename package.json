@@ -2,11 +2,6 @@
   "name": "stylecraft-redux-form",
   "version": "0.5.0",
   "description": "Redux-form done with Stylecraft.",
-  "main": "src/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iding-ir/stylecraft-redux-form.git"
-  },
   "keywords": [
     "react",
     "redux",
@@ -19,24 +14,19 @@
     "url": "http://iding.ir"
   },
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iding-ir/stylecraft-redux-form/issues"
-  },
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "redux": "^4.0.5",
-    "redux-form": "^8.3.5",
-    "stylecraft": "^0.9.0"
-  },
+  "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iding-ir/stylecraft-redux-form.git"
   },
+  "bugs": {
+    "url": "https://github.com/iding-ir/stylecraft-redux-form/issues"
+  },
+  "homepage": "https://github.com/iding-ir/stylecraft-redux-form#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -65,5 +55,33 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-form": "^8.3.5",
+    "stylecraft": "^0.9.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
