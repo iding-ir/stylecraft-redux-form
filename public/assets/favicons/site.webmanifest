@@ -3,8 +3,8 @@
   "short_name": "Stylecraft",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16?v=47B68lwkB7",
+      "src": "favicon.ico?v=47B68lwkB7",
+      "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
