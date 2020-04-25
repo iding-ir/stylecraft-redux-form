@@ -1,8 +1,20 @@
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   entry: {
-    app: "./example/index.js",
-    "stylecraft-redux-form": "./src/index.js",
+    app: "./src/index.js",
+    stylecraft: "./stylecraft/index.js",
   },
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
   module: {
     rules: [
       {

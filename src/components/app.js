@@ -8,7 +8,7 @@ import {
   renderRadio,
   renderCheckbox,
   renderTextarea,
-} from "../../src";
+} from "../../stylecraft";
 
 class App extends Component {
   onSubmit = (formValues) => {

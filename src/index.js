@@ -1,4 +1,13 @@
-export { default as renderTextfield } from "./modules/textfield";
-export { default as renderTextarea } from "./modules/textarea";
-export { default as renderCheckbox } from "./modules/checkbox";
-export { default as renderRadio } from "./modules/radio";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+
+import store from "./stores";
+import App from "./components/app";
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
