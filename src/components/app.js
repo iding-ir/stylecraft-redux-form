@@ -3,12 +3,10 @@ import { Field, reduxForm } from "redux-form";
 import "stylecraft/dist/stylecraft.css";
 
 import "./app.css";
-import {
-  renderTextfield,
-  renderRadio,
-  renderCheckbox,
-  renderTextarea,
-} from "../../stylecraft";
+import renderTextfield from "../modules/textfield";
+import renderRadio from "../modules/radio";
+import renderCheckbox from "../modules/checkbox";
+import renderTextarea from "../modules/textarea";
 
 class App extends Component {
   onSubmit = (formValues) => {

@@ -2,6 +2,7 @@
 
 - [Intro](#intro)
 - [Demo](#demo)
+- [Installation](#demo)
 - [Usage](#usage)
 
 ## Intro
@@ -11,6 +12,12 @@
 ## Demo
 
 [Live Demo](http://stylecraft-redux-form.iding.ir)
+
+## Installation
+
+```
+npm install --save stylecraft-redux-form
+```
 
 ## Usage
 

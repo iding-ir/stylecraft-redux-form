@@ -1,0 +1,10 @@
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.error {
+  line-height: var(--icon-md);
+  color: var(--color-secondary-dark);
+}
