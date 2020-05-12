@@ -14,7 +14,7 @@
     "url": "http://iding.ir"
   },
   "license": "ISC",
-  "main": "dist/stylecraft.js",
+  "main": "stylecraft/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
