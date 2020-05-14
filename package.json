@@ -1,6 +1,6 @@
 {
   "name": "stylecraft-redux-form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "redux-form component renderers done with Stylecraft.",
   "keywords": [
     "react",
