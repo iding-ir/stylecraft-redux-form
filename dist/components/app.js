@@ -21,6 +21,8 @@ var _checkbox = _interopRequireDefault(require("../modules/checkbox"));
 
 var _textarea = _interopRequireDefault(require("../modules/textarea"));
 
+var _select = _interopRequireDefault(require("../modules/select"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -106,6 +108,20 @@ var App = /*#__PURE__*/function (_Component) {
           value: "female"
         }],
         component: _radio.default
+      })), /*#__PURE__*/_react.default.createElement("h4", null, "Degree:"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "sc-form-group sc-grid-1"
+      }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
+        name: "degree",
+        items: [{
+          id: "bs",
+          label: "BS",
+          value: "bs"
+        }, {
+          id: "ms",
+          label: "MS",
+          value: "ms"
+        }],
+        component: _select.default
       })), /*#__PURE__*/_react.default.createElement("h4", null, "Motivation letter:"), /*#__PURE__*/_react.default.createElement("div", {
         className: "sc-form-group sc-grid-1"
       }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {

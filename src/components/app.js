@@ -7,6 +7,7 @@ import renderTextfield from "../modules/textfield";
 import renderRadio from "../modules/radio";
 import renderCheckbox from "../modules/checkbox";
 import renderTextarea from "../modules/textarea";
+import renderSelect from "../modules/select";
 
 class App extends Component {
   onSubmit = (formValues) => {
@@ -42,6 +43,19 @@ class App extends Component {
                 { id: "female", label: "Female", value: "female" },
               ]}
               component={renderRadio}
+            />
+          </div>
+
+          <h4>Degree:</h4>
+
+          <div className="sc-form-group sc-grid-1">
+            <Field
+              name="degree"
+              items={[
+                { id: "bs", label: "BS", value: "bs" },
+                { id: "ms", label: "MS", value: "ms" },
+              ]}
+              component={renderSelect}
             />
           </div>
 

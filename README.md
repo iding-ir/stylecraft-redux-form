@@ -58,6 +58,19 @@ import {
     />
   </div>
 
+  <h4>Degree:</h4>
+
+  <div className="sc-form-group sc-grid-1">
+    <Field
+      name="degree"
+      items={[
+        { id: "bs", label: "BS", value: "bs" },
+        { id: "ms", label: "MS", value: "ms" },
+      ]}
+      component={renderSelect}
+    />
+  </div>
+
   <h4>Motivation letter:</h4>
 
   <div className="sc-form-group sc-grid-1">
