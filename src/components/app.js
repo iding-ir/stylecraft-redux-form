@@ -26,11 +26,17 @@ class App extends Component {
           <h4>Personal info:</h4>
 
           <div className="sc-form-group sc-grid-1">
-            <Field name="name" label="Enter name" component={Textfield} />
+            <Field
+              name="name"
+              autoComplete="off"
+              label="Enter name"
+              component={Textfield}
+            />
 
             <Field
               name="email"
               type="email"
+              autoComplete="off"
               label="Enter email"
               component={Textfield}
             />
