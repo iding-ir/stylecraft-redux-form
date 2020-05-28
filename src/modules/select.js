@@ -19,8 +19,10 @@ export default (formProps) => {
 
   return (
     <div className="sc-form-select">
-      <select {...input}>
-        <option disabled={true}></option>
+      <select {...input} value="">
+        <option disabled={true} value="">
+          Select...
+        </option>
 
         {renderOptions()}
       </select>
