@@ -8,6 +8,7 @@ import Radio from "../modules/radio";
 import Checkbox from "../modules/checkbox";
 import Textarea from "../modules/textarea";
 import Select from "../modules/select";
+import Range from "../modules/range";
 
 class App extends Component {
   onSubmit = (formValues) => {
@@ -39,6 +40,17 @@ class App extends Component {
               autoComplete="off"
               label="Enter email"
               component={Textfield}
+            />
+          </div>
+
+          <div className="sc-form-group sc-grid-1">
+            <Field
+              name="age"
+              min={12}
+              max={40}
+              step={1}
+              label="Select age"
+              component={Range}
             />
           </div>
 
