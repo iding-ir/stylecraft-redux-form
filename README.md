@@ -23,10 +23,12 @@ npm install --save stylecraft-redux-form
 
 ```
 import {
-  renderTextfield,
-  renderRadio,
-  renderCheckbox,
-  renderTextarea,
+  Textfield,
+  Radio,
+  Checkbox,
+  Textarea,
+  Select,
+  Range
 } from "stylecraft-redux-form";
 
 <form
@@ -38,12 +40,30 @@ import {
   <h4>Personal info:</h4>
 
   <div className="sc-form-group sc-grid-1">
-    <Field name="name" label="Enter name" component={renderTextfield} />
+    <Field
+      name="name"
+      autoComplete="off"
+      label="Enter name"
+      component={Textfield}
+    />
 
     <Field
       name="email"
+      type="email"
+      autoComplete="off"
       label="Enter email"
-      component={renderTextfield}
+      component={Textfield}
+    />
+  </div>
+
+  <div className="sc-form-group sc-grid-1">
+    <Field
+      name="age"
+      min={12}
+      max={40}
+      step={1}
+      label="Select age"
+      component={Range}
     />
   </div>
 
@@ -54,7 +74,7 @@ import {
         { id: "male", label: "Male", value: "male" },
         { id: "female", label: "Female", value: "female" },
       ]}
-      component={renderRadio}
+      component={Radio}
     />
   </div>
 
@@ -67,18 +87,14 @@ import {
         { id: "bs", label: "BS", value: "bs" },
         { id: "ms", label: "MS", value: "ms" },
       ]}
-      component={renderSelect}
+      component={Select}
     />
   </div>
 
   <h4>Motivation letter:</h4>
 
   <div className="sc-form-group sc-grid-1">
-    <Field
-      name="letter"
-      label="Enter letter"
-      component={renderTextarea}
-    />
+    <Field name="letter" label="Enter letter" component={Textarea} />
   </div>
 
   <h4>Agreements:</h4>
@@ -93,7 +109,7 @@ import {
           value: "tos",
         },
       ]}
-      component={renderCheckbox}
+      component={Checkbox}
     />
 
     <Field
@@ -105,7 +121,7 @@ import {
           value: "newsletter",
         },
       ]}
-      component={renderCheckbox}
+      component={Checkbox}
     />
   </div>
 
