@@ -23,6 +23,8 @@ var _textarea = _interopRequireDefault(require("../modules/textarea"));
 
 var _select = _interopRequireDefault(require("../modules/select"));
 
+var _range = _interopRequireDefault(require("../modules/range"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -88,12 +90,24 @@ var App = /*#__PURE__*/function (_Component) {
         className: "sc-form-group sc-grid-1"
       }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
         name: "name",
+        autoComplete: "off",
         label: "Enter name",
         component: _textfield.default
       }), /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
         name: "email",
+        type: "email",
+        autoComplete: "off",
         label: "Enter email",
         component: _textfield.default
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "sc-form-group sc-grid-1"
+      }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
+        name: "age",
+        min: 12,
+        max: 40,
+        step: 1,
+        label: "Select age",
+        component: _range.default
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "sc-form-group sc-grid-2"
       }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {

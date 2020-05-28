@@ -13,14 +13,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var _default = function _default(formProps) {
-  var input = formProps.input,
-      label = formProps.label,
-      meta = formProps.meta;
+var Textfield = function Textfield(props) {
+  var input = props.input,
+      type = props.type,
+      autoComplete = props.autoComplete,
+      label = props.label,
+      meta = props.meta;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "sc-form-text sc-has-label"
   }, /*#__PURE__*/_react.default.createElement("input", _extends({}, input, {
-    autoComplete: "off",
+    type: type,
+    autoComplete: autoComplete,
     id: input.name
   })), /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: input.name
@@ -29,4 +32,8 @@ var _default = function _default(formProps) {
   }, (0, _error.default)(meta)));
 };
 
+Textfield.defaultProps = {
+  type: "text"
+};
+var _default = Textfield;
 exports.default = _default;

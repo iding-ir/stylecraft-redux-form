@@ -11,10 +11,10 @@ var _error = _interopRequireDefault(require("./error"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _default = function _default(formProps) {
-  var input = formProps.input,
-      items = formProps.items,
-      meta = formProps.meta;
+var Select = function Select(props) {
+  var input = props.input,
+      items = props.items,
+      meta = props.meta;
 
   var renderOptions = function renderOptions() {
     return items.map(function (item) {
@@ -38,4 +38,5 @@ var _default = function _default(formProps) {
   }, (0, _error.default)(meta)));
 };
 
+var _default = Select;
 exports.default = _default;
