@@ -1,7 +1,7 @@
 {
   "name": "stylecraft-redux-form",
-  "version": "1.1.0",
-  "description": "redux-form component renderers done with Stylecraft.",
+  "version": "1.1.2",
+  "description": "redux-form component renderers for Stylecraft.",
   "keywords": [
     "react",
     "redux",
@@ -31,14 +31,14 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-form": "^8.3.5",
-    "stylecraft": "^0.9.0"
+    "stylecraft": "^0.11.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
+    "@babel/preset-react": "^7.10.1",
     "babel-loader": "^8.0.2",
     "babel-plugin-transform-class-properties": "^6.24.1"
   },
