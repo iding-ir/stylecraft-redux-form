@@ -2,8 +2,8 @@ import React from "react";
 
 import renderError from "./error";
 
-export default (formProps) => {
-  const { input, label, meta } = formProps;
+const Textarea = (props) => {
+  const { input, label, meta } = props;
 
   return (
     <div className="sc-form-text sc-has-label">
@@ -15,3 +15,5 @@ export default (formProps) => {
     </div>
   );
 };
+
+export default Textarea;

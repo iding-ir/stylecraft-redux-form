@@ -2,8 +2,8 @@ import React from "react";
 
 import renderError from "./error";
 
-export default (formProps) => {
-  const { input, items, meta } = formProps;
+const Select = (props) => {
+  const { input, items, meta } = props;
 
   const renderOptions = () => {
     return items.map((item) => {
@@ -19,10 +19,8 @@ export default (formProps) => {
 
   return (
     <div className="sc-form-select">
-      <select {...input} value="">
-        <option disabled={true} value="">
-          Select...
-        </option>
+      <select {...input}>
+        <option disabled={true}></option>
 
         {renderOptions()}
       </select>
@@ -31,3 +29,5 @@ export default (formProps) => {
     </div>
   );
 };
+
+export default Select;

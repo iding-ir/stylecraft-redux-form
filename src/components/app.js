@@ -3,11 +3,11 @@ import { Field, reduxForm } from "redux-form";
 import "stylecraft/dist/stylecraft.css";
 
 import "./app.css";
-import renderTextfield from "../modules/textfield";
-import renderRadio from "../modules/radio";
-import renderCheckbox from "../modules/checkbox";
-import renderTextarea from "../modules/textarea";
-import renderSelect from "../modules/select";
+import Textfield from "../modules/textfield";
+import Radio from "../modules/radio";
+import Checkbox from "../modules/checkbox";
+import Textarea from "../modules/textarea";
+import Select from "../modules/select";
 
 class App extends Component {
   onSubmit = (formValues) => {
@@ -26,13 +26,9 @@ class App extends Component {
           <h4>Personal info:</h4>
 
           <div className="sc-form-group sc-grid-1">
-            <Field name="name" label="Enter name" component={renderTextfield} />
+            <Field name="name" label="Enter name" component={Textfield} />
 
-            <Field
-              name="email"
-              label="Enter email"
-              component={renderTextfield}
-            />
+            <Field name="email" label="Enter email" component={Textfield} />
           </div>
 
           <div className="sc-form-group sc-grid-2">
@@ -42,7 +38,7 @@ class App extends Component {
                 { id: "male", label: "Male", value: "male" },
                 { id: "female", label: "Female", value: "female" },
               ]}
-              component={renderRadio}
+              component={Radio}
             />
           </div>
 
@@ -55,18 +51,14 @@ class App extends Component {
                 { id: "bs", label: "BS", value: "bs" },
                 { id: "ms", label: "MS", value: "ms" },
               ]}
-              component={renderSelect}
+              component={Select}
             />
           </div>
 
           <h4>Motivation letter:</h4>
 
           <div className="sc-form-group sc-grid-1">
-            <Field
-              name="letter"
-              label="Enter letter"
-              component={renderTextarea}
-            />
+            <Field name="letter" label="Enter letter" component={Textarea} />
           </div>
 
           <h4>Agreements:</h4>
@@ -81,7 +73,7 @@ class App extends Component {
                   value: "tos",
                 },
               ]}
-              component={renderCheckbox}
+              component={Checkbox}
             />
 
             <Field
@@ -93,7 +85,7 @@ class App extends Component {
                   value: "newsletter",
                 },
               ]}
-              component={renderCheckbox}
+              component={Checkbox}
             />
           </div>
 

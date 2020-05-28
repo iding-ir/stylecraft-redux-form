@@ -2,8 +2,8 @@ import React from "react";
 
 import renderError from "./error";
 
-export default (formProps) => {
-  const { input, items, meta } = formProps;
+const Checkbox = (props) => {
+  const { input, items, meta } = props;
 
   return items.map((item) => {
     const { id, value, label } = item;
@@ -23,3 +23,5 @@ export default (formProps) => {
     );
   });
 };
+
+export default Checkbox;
