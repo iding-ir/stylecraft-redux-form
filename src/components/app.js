@@ -28,7 +28,12 @@ class App extends Component {
           <div className="sc-form-group sc-grid-1">
             <Field name="name" label="Enter name" component={Textfield} />
 
-            <Field name="email" label="Enter email" component={Textfield} />
+            <Field
+              name="email"
+              type="email"
+              label="Enter email"
+              component={Textfield}
+            />
           </div>
 
           <div className="sc-form-group sc-grid-2">
