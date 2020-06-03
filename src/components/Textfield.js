@@ -1,6 +1,6 @@
 import React from "react";
 
-import renderError from "./error";
+import renderError from "./Error";
 
 const Textfield = (props) => {
   const { input, type, autoComplete, label, meta } = props;

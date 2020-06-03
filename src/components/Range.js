@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import renderError from "./error";
+import renderError from "./Error";
 
 class Range extends Component {
   state = {

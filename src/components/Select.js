@@ -1,6 +1,6 @@
 import React from "react";
 
-import renderError from "./error";
+import renderError from "./Error";
 
 const Select = (props) => {
   const { input, items, meta } = props;

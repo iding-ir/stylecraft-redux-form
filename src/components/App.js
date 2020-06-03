@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import "stylecraft/dist/stylecraft.css";
 
-import "./app.css";
-import Textfield from "../modules/textfield";
-import Radio from "../modules/radio";
-import Checkbox from "../modules/checkbox";
-import Textarea from "../modules/textarea";
-import Select from "../modules/select";
-import Range from "../modules/range";
+import "./App.css";
+import Textfield from "../components/Textfield";
+import Radio from "../components/Radio";
+import Checkbox from "../components/Checkbox";
+import Textarea from "../components/Textarea";
+import Select from "../components/Select";
+import Range from "../components/Range";
 
 class App extends Component {
   onSubmit = (formValues) => {
