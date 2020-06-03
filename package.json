@@ -31,7 +31,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-form": "^8.3.5",
-    "stylecraft": "^0.11.4"
+    "stylecraft": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
