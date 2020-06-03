@@ -11,19 +11,19 @@ var _reduxForm = require("redux-form");
 
 require("stylecraft/dist/stylecraft.css");
 
-require("./app.css");
+require("./App.css");
 
-var _textfield = _interopRequireDefault(require("../modules/textfield"));
+var _Textfield = _interopRequireDefault(require("./Textfield"));
 
-var _radio = _interopRequireDefault(require("../modules/radio"));
+var _Radio = _interopRequireDefault(require("./Radio"));
 
-var _checkbox = _interopRequireDefault(require("../modules/checkbox"));
+var _Checkbox = _interopRequireDefault(require("./Checkbox"));
 
-var _textarea = _interopRequireDefault(require("../modules/textarea"));
+var _Textarea = _interopRequireDefault(require("./Textarea"));
 
-var _select = _interopRequireDefault(require("../modules/select"));
+var _Select = _interopRequireDefault(require("./Select"));
 
-var _range = _interopRequireDefault(require("../modules/range"));
+var _Range = _interopRequireDefault(require("./Range"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -92,13 +92,13 @@ var App = /*#__PURE__*/function (_Component) {
         name: "name",
         autoComplete: "off",
         label: "Enter name",
-        component: _textfield.default
+        component: _Textfield.default
       }), /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
         name: "email",
         type: "email",
         autoComplete: "off",
         label: "Enter email",
-        component: _textfield.default
+        component: _Textfield.default
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "sc-form-group sc-grid-1"
       }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
@@ -107,7 +107,7 @@ var App = /*#__PURE__*/function (_Component) {
         max: 40,
         step: 1,
         label: "Select age",
-        component: _range.default
+        component: _Range.default
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "sc-form-group sc-grid-2"
       }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
@@ -121,7 +121,7 @@ var App = /*#__PURE__*/function (_Component) {
           label: "Female",
           value: "female"
         }],
-        component: _radio.default
+        component: _Radio.default
       })), /*#__PURE__*/_react.default.createElement("h4", null, "Degree:"), /*#__PURE__*/_react.default.createElement("div", {
         className: "sc-form-group sc-grid-1"
       }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
@@ -135,13 +135,13 @@ var App = /*#__PURE__*/function (_Component) {
           label: "MS",
           value: "ms"
         }],
-        component: _select.default
+        component: _Select.default
       })), /*#__PURE__*/_react.default.createElement("h4", null, "Motivation letter:"), /*#__PURE__*/_react.default.createElement("div", {
         className: "sc-form-group sc-grid-1"
       }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
         name: "letter",
         label: "Enter letter",
-        component: _textarea.default
+        component: _Textarea.default
       })), /*#__PURE__*/_react.default.createElement("h4", null, "Agreements:"), /*#__PURE__*/_react.default.createElement("div", {
         className: "sc-form-group sc-grid-1"
       }, /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
@@ -151,7 +151,7 @@ var App = /*#__PURE__*/function (_Component) {
           label: "I agree to terms of service",
           value: "tos"
         }],
-        component: _checkbox.default
+        component: _Checkbox.default
       }), /*#__PURE__*/_react.default.createElement(_reduxForm.Field, {
         name: "newsletter",
         items: [{
@@ -159,7 +159,7 @@ var App = /*#__PURE__*/function (_Component) {
           label: "Subscribe to newsletter with email",
           value: "newsletter"
         }],
-        component: _checkbox.default
+        component: _Checkbox.default
       })), /*#__PURE__*/_react.default.createElement("div", {
         className: "sc-form-group sc-grid-1"
       }, /*#__PURE__*/_react.default.createElement("div", {

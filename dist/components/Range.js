@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _error = _interopRequireDefault(require("./error"));
+var _Error = _interopRequireDefault(require("./Error"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -107,7 +107,7 @@ var Range = /*#__PURE__*/function (_Component) {
         htmlFor: input.name
       }, label, renderValue()), /*#__PURE__*/_react.default.createElement("span", {
         className: "sc-error"
-      }, (0, _error.default)(meta)));
+      }, (0, _Error.default)(meta)));
     }
   }]);
 
